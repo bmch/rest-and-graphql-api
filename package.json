@@ -1,0 +1,33 @@
+{
+  "name": "rest-crud-graphql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./server/server.js",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server-koa": "^2.25.0",
+    "bcrypt": "^5.0.1",
+    "esm": "^3.2.25",
+    "graphql": "^15.5.0",
+    "graphql-tools": "^7.0.5",
+    "joi": "^17.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "koa": "^2.13.1",
+    "koa-bodyparser": "^4.3.0",
+    "koa-router": "^10.0.0",
+    "mongoose": "^5.12.12"
+  },
+  "devDependencies": {
+    "faker": "^5.5.3",
+    "jest": "^27.0.3",
+    "lodash": "^4.17.21",
+    "nodemon": "^2.0.7",
+    "supertest": "^6.1.3"
+  }
+}
