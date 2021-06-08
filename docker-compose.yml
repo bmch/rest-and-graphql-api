@@ -1,18 +1,23 @@
 version: '3.7'
 services:
-  nodejs-api:
-    build:
-      context: ./
-      dockerfile: Dockerfile
+  my_service:
+    container_name: my_koa_service
+    build: .
+    volumes:
+      - .:/usr/src/app
     ports:
-      - '3081:3081'
-    container_name: nodejs-api
+      - '3001:3001'
     links:
-      - mongo-db
-  mongo-db:
+      - my_service_db
+    environment:
+      - dev=1
+      - db_service_name=my_service_db
+      - db_name=example_db
+      - db_retry_time=3000
+  my_service_db:
+    container_name: my_service_db
     image: mongo
+    volumes:
+      - ./db:/data/db
     ports:
       - '27017:27017'
-    container_name: mongo-db
-    volumes:
-      - ./db/:/data/db
